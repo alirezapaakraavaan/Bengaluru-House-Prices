@@ -23,8 +23,6 @@ def get_estimated_price(location, sqft, bhk, bath):
 
     return round(__model.predict([x])[0], 2)
 
-def get_location_names():
-    return __locations
 
 def load_saved_artifacts():
     print("Loading saved artifacts...start")
@@ -42,10 +40,16 @@ def load_saved_artifacts():
     print("Loading Saved Artifacts...Done") 
 
 
+def get_location_names():
+    return __locations
+ 
+def get_data_columns():
+    return __data_columns
+
 if __name__ == "__main__":
     load_saved_artifacts()
     print(get_location_names())
-    print(get_estimated_price('1st Phase JP Nagar', 1000, 3, 3))
-    print(get_estimated_price('1st Phase JP Nagar', 1000, 2, 2))
-    print(get_estimated_price('Kalhalli', 1000, 2, 2))
-    print(get_estimated_price('Ejipura', 1000, 2, 2))
+    # print(get_estimated_price('1st Phase JP Nagar', 1000, 3, 3))
+    # print(get_estimated_price('1st Phase JP Nagar', 1000, 2, 2))
+    # print(get_estimated_price('Kalhalli', 1000, 2, 2))
+    # print(get_estimated_price('Ejipura', 1000, 2, 2))
